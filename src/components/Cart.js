@@ -1,10 +1,12 @@
 import React from "react";
 import "./Cart.css";
+import {useSelector} from "react-redux";
 const Cart = () => {
-  const quantity = 5;
+  const totalQty = useSelector(state => state.cart.totalQty);
+  const totalPrice = useSelector(state => state.cart.totalPrice);
   return (
     <div className="cartIcon">
-      <h3>Cart: {quantity} Items</h3>
+      <h3>Cart: {totalQty} Items - Price: {totalPrice}</h3>
     </div>
   );
 };
