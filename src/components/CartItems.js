@@ -10,7 +10,7 @@ const CartItems = () => {
       <h2>Your Cart</h2>
       <ul>
           <li>{items.map(item =>
-              <CartItem id={item.id} price={item.price} name={item.name} quantity={item.quantity} total={item.totalPriceItem}/>)}
+              <CartItem key={item.id} id={item.id} price={item.price} name={item.name} quantity={item.quantity} total={item.totalPriceItem}/>)}
           </li>
       </ul>
     </div>
