@@ -34,7 +34,7 @@ const cartSlice = createSlice(({
         },
         remove() {},
         showCart(state) {
-            state.showCart = true;
+            state.showCart = !state.showCart;
         }
     }
 }))
