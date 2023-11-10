@@ -4,7 +4,8 @@ import {createSlice} from "@reduxjs/toolkit";
     id,
     name,
     price
-    quantity
+    quantity,
+    totalPriceItem
 }*/
 
 const cartSlice = createSlice(({
@@ -22,11 +23,12 @@ const cartSlice = createSlice(({
 
             if (existingItem) {
                 existingItem.quantity++;
-                existingItem.price += newItem.price;
+                existingItem.totalPriceItem += newItem.price;
             } else {
                 state.items.push({
                     ...newItem,
-                    quantity: 1
+                    quantity: 1,
+                    totalPriceItem: newItem.price
                 })
             }
             state.totalQty++;

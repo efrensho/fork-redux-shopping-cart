@@ -16,7 +16,7 @@ const Layout = () => {
       <div className="layout">
         <Header />
         {!showCart && <Products />}
-        {showCart &&
+        {!showCart &&
             <>
               <CartItems  />
               <div className="total-price">
