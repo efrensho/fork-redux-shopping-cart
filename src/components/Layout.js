@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Products from "./Products";
-import "./Layout.css";
+import "../styles/Layout.css";
 import {useSelector} from "react-redux";
 import CartItems from "./CartItems";
 const Layout = () => {

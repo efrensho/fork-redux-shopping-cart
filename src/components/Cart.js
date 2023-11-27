@@ -1,5 +1,5 @@
 import React from "react";
-import "./Cart.css";
+import "../styles/Cart.css";
 import {useDispatch, useSelector} from "react-redux";
 import {cartActions} from "../store/cart-slice";
 const Cart = () => {
