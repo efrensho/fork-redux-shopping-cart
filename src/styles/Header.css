@@ -7,8 +7,17 @@
   display: flex;
   flex: 1;
   justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
 }
 .header-h2 {
   font-family: monospace;
   font-size: 30px;
+}
+
+.logout-btn {
+  background: orangered;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 0;
 }

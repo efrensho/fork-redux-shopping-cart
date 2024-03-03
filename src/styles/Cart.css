@@ -25,7 +25,7 @@ li {
   justify-content: space-between;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 20px;
+  padding: 35px 28px;
   font-size: 20px;
   font-weight: bold;
   background: #2f3c7e;
@@ -37,4 +37,5 @@ li {
   width: 50px;
   border: none;
   background: rgb(10, 7, 24);
+  margin-top: 0;
 }
