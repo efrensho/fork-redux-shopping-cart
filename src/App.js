@@ -4,8 +4,8 @@ import Auth from "./components/Auth";
 import Layout from "./components/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {Notification} from "./components/Notification";
-import {uiActions} from "./store/ui-slice";
-import {updateCartThunk} from "./store/cart-slice";
+import {fetchItems, updateCartThunk} from "./store/actions/cart-actions";
+import {cartActions} from "./store/cart-slice";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,7 +15,10 @@ function App() {
   const notification = useSelector(state => state.ui.notification);
 
   useEffect(() => {
+      dispatch(fetchItems());
+  }, [dispatch])
 
+  useEffect(() => {
       if (cart.items.length) {
           dispatch(updateCartThunk(cart));
       }

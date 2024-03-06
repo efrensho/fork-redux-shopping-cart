@@ -18,6 +18,10 @@ const cartSlice = createSlice(({
         totalQty: 0
     },
     reducers: {
+        replaceData(state, action) {
+            state.totalQty = action.payload.totalQty;
+            state.items = action.payload.items;
+        },
         add(state, action) {
             const newItem = action.payload;
             const existingItem = state.items.find(item => item.id === newItem.id)
@@ -55,39 +59,6 @@ const cartSlice = createSlice(({
     }
 }))
 
-export const updateCartThunk = (cart) =>
-    async (dispatch, getState) => {
-        dispatch(uiActions.showNotification({
-            open: true,
-            message: "Adding item",
-            type: "warning"
-        }));
-
-        const updateCart = async () => {
-            const res = await fetch('https://redux-tutorial-yt-fcc-default-rtdb.firebaseio.com/cartItems.json', {
-                method: 'PUT',
-                body: JSON.stringify(cart)
-            });
-
-            const data = res.json();
-            dispatch(uiActions.showNotification({
-                type: "success",
-                message: "Item successfully added",
-                open: true
-            }))
-
-        };
-
-        try {
-            await updateCart();
-        } catch (e) {
-            dispatch(uiActions.showNotification({
-                type: "error",
-                message: "Error adding item" + e,
-                open: true
-            }))
-        }
-    }
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;
